@@ -1,0 +1,17 @@
+{% extends "appointments/base.html" %}
+{% block title %}
+    Dashboard
+{% endblock title %}
+
+{% block content %}
+<center>
+    <h1>Welcome {{user.username}}</h1>
+    <p>Welcome to your hospital appointment dashboard.</p>
+    <a href="{% url "doctors" %}">
+        Find a Doctor
+    </a>
+    <br><br>
+    <a href="{% url "my_appointments" %}">View My Appointments</a>
+</center>
+{% endblock content %}
+

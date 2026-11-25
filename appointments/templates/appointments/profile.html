@@ -1,0 +1,48 @@
+{% extends 'appointments/base.html' %}
+
+{% block title %}
+Profile
+{% endblock %}
+
+{% block content %}
+<center>
+
+<h1>My Profile</h1>
+
+<!-- Display patient's username -->
+<p>
+    <strong>Username:</strong>
+    {{ patient.user.username }}
+</p>
+
+<!-- Display patient's email -->
+<p>
+    <strong>Email:</strong>
+    {{ patient.user.email }}
+</p>
+
+<!-- Display patient's phone -->
+<p>
+    <strong>Phone:</strong>
+    {{ patient.phone }}
+</p>
+
+<!-- Display patient's age -->
+<p>
+    <strong>Age:</strong>
+    {{ patient.age }}
+</p>
+
+<!-- Display patient's gender -->
+<p>
+    <strong>Gender:</strong>
+    {{ patient.gender }}
+</p>
+
+<!-- Display patient's address -->
+<p>
+    <strong>Address:</strong>
+    {{ patient.address }}
+</p>
+</center>
+{% endblock %}

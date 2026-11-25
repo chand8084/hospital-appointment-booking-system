@@ -1,0 +1,15 @@
+{% extends "appointments/base.html" %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block content %}
+<center>
+    <h1>Hospital Appointment Booking System</h1>
+    <p>Book appointments with doctor easily</p>
+
+    <a href="{% url "doctors" %}">View Doctors</a>
+</center>
+{% endblock content %}
+

@@ -1,0 +1,27 @@
+{% extends 'appointments/base.html' %}
+{% block title %}
+Doctors
+{% endblock %}
+{% block content %}
+<center>
+<div class="doctors-container">
+    <h1>Our Doctors</h1>
+    <p>Find the right specialist and book your appointment.</p>
+    <div class="doctor-grid">
+        {% for doctor in doctors %}
+        <div class="doctor-card">
+            <h2>Dr. {{ doctor.name }}</h2>
+            <p class="specialization">{{ doctor.specialization }}</p>
+            <p class="experience">{{ doctor.experience }} years of experience</p>
+            <a href="{% url 'doctor_detail' doctor.id %}" class="btn">View Details</a>
+        </div>
+        {% empty %}
+        <div class="empty-state">
+            <h3>No Doctors Available</h3>
+            <p>There are currently no doctors registered.</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+</center>
+{% endblock %}

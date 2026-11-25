@@ -1,0 +1,45 @@
+{% extends 'appointments/base.html' %}
+
+{% block title %}
+Book Appointment
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>Book Appointment</h1>
+        <p>Doctor: <strong>{{ doctor.name }}</strong></p>
+        <p>Specialization: <strong>{{ doctor.specialization }}</strong></p>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="appointment_date">Appointment Date</label>
+            <select id="appointment_date" name="appointment_date" required>
+                <option value="">Select Date</option>
+                {% for availability in availabilities %}
+                    <option value="{{ availability.date }}">
+                        {{ availability.date }} ({{ availability.start_time }} - {{ availability.end_time }})
+                    </option>
+                {% empty %}
+                    <option value="">No available dates</option>
+                {% endfor %}
+            </select>
+
+            <br><br>
+
+            <label for="appointment_time">Appointment Time</label>
+            <input type="time" id="appointment_time" name="appointment_time" required>
+
+            <br><br>
+
+            <label for="reason">Reason</label>
+            <textarea id="reason" name="reason" placeholder="Enter reason for appointment" required></textarea>
+
+            <br>
+
+            <button type="submit">Book Appointment</button>
+        </form>
+    </div>
+</div>
+{% endblock %}

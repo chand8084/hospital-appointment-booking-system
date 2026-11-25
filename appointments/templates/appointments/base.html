@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        Hospital Appointment System
+        {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static "appointments/css/style.css" %}">
+</head>
+<body>
+
+    <center>
+    <nav>
+        <a href="{% url "home" %}">
+            Home
+        </a>
+        <a href="{% url "doctors" %}">Doctors</a>
+
+        {% if user.is_authenticated %}
+
+            {% if user.doctor %}
+                <a href="{% url 'doctor_dashboard' %}">Dashboard</a>
+            {% else %}
+                <a href="{% url 'dashboard' %}">Dashboard</a>
+                <a href="{% url 'my_appointments' %}">My Appointments</a>
+                <a href="{% url 'profile' %}">Profile</a>
+            {% endif %}
+
+            <a href="{% url 'logout' %}" class="logout-btn">Logout</a>
+
+        {% else %}  
+
+            <a href="{% url 'login' %}">Login</a>
+            <a href="{% url 'register' %}">Register</a>
+            <a href="{% url 'doctor_login' %}">Doctor Login</a>
+
+        {% endif %}
+    </nav>
+
+    {% for message in messages %}
+        <p>{{message}}</p>
+    {% endfor %}
+    <main>
+    {% block content %}
+    
+    {% endblock content %}
+    </main>
+</center>
+
+</body>
+</html>

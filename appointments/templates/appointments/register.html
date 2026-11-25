@@ -1,0 +1,41 @@
+{% extends "appointments/base.html" %}
+
+{% block title %}
+    Register
+{% endblock title %}
+
+{% block content %}
+<center>
+    <h1>Create Patient account</h1>
+
+    <form action="" method='POST' autocomplete='off'>
+        {% csrf_token %}
+        <input type="text" name='username' placeholder='username' required autocomplete='off'>
+        <br><br>
+        <input type="email" name='email' placeholder='@gmail.com' required>
+        <br><br>
+        <input type="password" name='password' placeholder='password' autocomplete="new-password" required>
+        <br><br>
+        <input type="text" name='phone' placeholder='phone' required>
+        <br><br>
+        <input type="number" name='age' placeholder='age' required>
+        <br><br>
+        <select name="gender">
+            <option value="Select">Select</option>
+            <option value="Male">male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <br><br>
+        <textarea name="address" placeholder='Address' required></textarea>
+        <br><br>
+
+        <button type='submit'>Register</button>
+
+        <br><br>
+        <a href="{% url "login" %}">Already have a account?</a>
+    </form>
+    </center>
+{% endblock content %}
+
+

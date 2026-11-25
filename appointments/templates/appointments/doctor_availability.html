@@ -1,0 +1,59 @@
+{% extends 'appointments/base.html' %}
+
+{% block title %}
+Doctor Availability
+{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <h1>Doctor Availability</h1>
+    <p>Manage your available dates and times.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <label for="date">Date</label>
+        <input type="date" id="date" name="date" required>
+
+        <br><br>
+
+        <label for="start_time">Start Time</label>
+        <input type="time" id="start_time" name="start_time" required>
+
+        <br><br>
+
+        <label for="end_time">End Time</label>
+        <input type="time" id="end_time" name="end_time" required>
+
+        <br><br>
+
+        <button type="submit">Add Availability</button>
+    </form>
+
+    <br>
+
+    <h2>My Availability</h2>
+
+    {% for availability in availabilities %}
+        <div class="appointment-card">
+            <h3>{{ availability.date }}</h3>
+            <p><strong>Start:</strong> {{ availability.start_time }}</p>
+            <p><strong>End:</strong> {{ availability.end_time }}</p>
+            <p>
+                <strong>Status:</strong>
+                {% if availability.is_available %}
+                    Available
+                {% else %}
+                    Not Available
+                {% endif %}
+            </p>
+            <a href="{% url 'edit_availability' availability.id %}" class="btn">Edit</a>
+            <a href="{% url 'delete_availability' availability.id %}" class="btn btn-secondary">Delete</a>
+        </div>
+    {% empty %}
+        <div class="empty-state">
+            <h3>No Availability</h3>
+            <p>You haven't added any availability yet.</p>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}

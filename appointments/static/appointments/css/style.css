@@ -1,0 +1,484 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f8fb;
+    color: #243447;
+    line-height: 1.6;
+}
+nav {
+    width: 100%;
+    min-height: 70px;
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 7%;
+    gap: 30px;
+    border-bottom: 1px solid #e3eaf0;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+nav a {
+    text-decoration: none;
+    color: #334e68;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 4px;
+    transition: 0.3s ease;
+}
+nav a:hover {
+    color: #0d8b8b;
+}
+main {
+    width: 86%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+h1 {
+    font-size: 34px;
+    color: #173f5f;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+h2 {
+    font-size: 25px;
+    color: #173f5f;
+    margin-bottom: 15px;
+}
+h3 {
+    font-size: 20px;
+    color: #244b63;
+    margin-bottom: 10px;
+}
+p {
+    color: #627d98;
+    font-size: 15px;
+    margin-bottom: 12px;
+}
+.hero {
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    padding: 60px 7%;
+    background-color: #eaf7f7;
+}
+.hero-content {
+    max-width: 650px;
+}
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.2;
+    color: #123b56;
+    margin-bottom: 20px;
+}
+.hero p {
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+button,
+.btn {
+    display: inline-block;
+    background-color: #0d8b8b;
+    color: white;
+    border: none;
+    border-radius: 7px;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+button:hover,
+.btn:hover {
+    background-color: #096f70;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 15px rgba(13, 139, 139, 0.2);
+}
+.btn-secondary {
+    background-color: #e8f1f5;
+    color: #244b63;
+}
+.btn-secondary:hover {
+    background-color: #d7e6ec;
+    color: #173f5f;
+}
+form {
+    width: 100%;
+    max-width: 550px;
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #e1e9ef;
+    box-shadow: 0 8px 25px rgba(30, 60, 80, 0.08);
+    margin-top: 25px;
+}
+label {
+    display: block;
+    color: #334e68;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd8e2;
+    border-radius: 7px;
+    background-color: #ffffff;
+    color: #243447;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s ease;
+}
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #0d8b8b;
+    box-shadow: 0 0 0 3px rgba(13, 139, 139, 0.10);
+}
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+form button {
+    width: 100%;
+    margin-top: 10px;
+}
+.auth-container {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+}
+.auth-card {
+    width: 100%;
+    max-width: 450px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    border: 1px solid #e1e9ef;
+    box-shadow: 0 10px 35px rgba(30, 60, 80, 0.09);
+}
+.auth-card h1 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+.auth-card p {
+    text-align: center;
+    margin-bottom: 25px;
+}
+.doctors-container {
+    width: 86%;
+    max-width: 1200px;
+    margin: 45px auto;
+}
+.doctor-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+.doctor-card {
+    background-color: #ffffff;
+    border: 1px solid #e2eaf0;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(30, 60, 80, 0.07);
+    transition: all 0.3s ease;
+}
+.doctor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(30, 60, 80, 0.12);
+    border-color: #b9dfe0;
+}
+.doctor-card h2 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+.doctor-card .specialization {
+    color: #0d8b8b;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.doctor-card .experience {
+    color: #627d98;
+    margin-bottom: 18px;
+}
+.doctor-profile {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 14px;
+    border: 1px solid #e1e9ef;
+    box-shadow: 0 8px 30px rgba(30, 60, 80, 0.08);
+}
+.doctor-profile h1 {
+    margin-bottom: 25px;
+}
+.doctor-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 30px;
+}
+.doctor-info-item {
+    padding: 15px;
+    background-color: #f5fafc;
+    border-radius: 8px;
+    border: 1px solid #e5edf2;
+}
+.doctor-info-item strong {
+    display: block;
+    color: #173f5f;
+    margin-bottom: 5px;
+}
+
+.profile-container {
+    width: 90%;
+    max-width: 750px;
+    margin: 50px auto;
+}
+.profile-card {
+    background-color: #ffffff;
+    border-radius: 14px;
+    padding: 35px;
+    border: 1px solid #e1e9ef;
+    box-shadow: 0 8px 28px rgba(30, 60, 80, 0.08);
+}
+.profile-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 16px 0;
+    border-bottom: 1px solid #edf1f4;
+}
+.profile-row:last-child {
+    border-bottom: none;
+}
+.profile-label {
+    font-weight: 600;
+    color: #334e68;
+}
+.profile-value {
+    color: #627d98;
+}
+.appointments-container {
+    width: 90%;
+    max-width: 1000px;
+    margin: 45px auto;
+}
+.appointment-card {
+    background-color: #ffffff;
+    border: 1px solid #e1e9ef;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 18px rgba(30, 60, 80, 0.06);
+    transition: 0.3s ease;
+}
+.appointment-card:hover {
+    box-shadow: 0 10px 25px rgba(30, 60, 80, 0.10);
+}
+.appointment-card h3 {
+    color: #173f5f;
+    margin-bottom: 15px;
+}
+.appointment-info {
+    display: grid;
+    grid-template-columns:
+        repeat(2, 1fr);
+    gap: 12px;
+}
+
+.status {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+.status-pending {
+    background-color: #fff5d6;
+    color: #8a6500;
+}
+.status-approved {
+    background-color: #e2f6eb;
+    color: #217346;
+}
+.status-rejected {
+    background-color: #fde8e8;
+    color: #b42318;
+}
+.status-completed {
+    background-color: #e7f0ff;
+    color: #2457a6;
+}
+.status-cancelled {
+    background-color: #f1f3f5;
+    color: #5c6770;
+}
+
+.dashboard-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 45px auto;
+}
+.dashboard-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+    margin-top: 30px;
+}
+.dashboard-card {
+    background-color: #ffffff;
+    padding: 28px;
+    border-radius: 12px;
+    border: 1px solid #e1e9ef;
+    box-shadow: 0 6px 20px rgba(30, 60, 80, 0.06);
+    transition: 0.3s ease;
+}
+.dashboard-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(30, 60, 80, 0.10);
+}
+.dashboard-card h3 {
+    margin-bottom: 10px;
+}
+.messages {
+    width: 90%;
+    max-width: 900px;
+    margin: 20px auto;
+}
+.message {
+    padding: 13px 18px;
+    border-radius: 7px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+.message.success {
+    background-color: #e5f7ed;
+    color: #217346;
+    border: 1px solid #bde6ce;
+}
+.message.error {
+    background-color: #fdecec;
+    color: #b42318;
+    border: 1px solid #f4c7c3;
+}
+
+.empty-state {
+    background-color: #ffffff;
+    padding: 45px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid #e1e9ef;
+    color: #627d98;
+}
+hr {
+    border: none;
+    border-top: 1px solid #e5ebef;
+    margin: 25px 0;
+}
+footer {
+    margin-top: 60px;
+    padding: 30px;
+    background-color: #173f5f;
+    color: #ffffff;
+    text-align: center;
+}
+footer p {
+    color: #d9e5ed;
+    margin: 0;
+}
+@media (max-width: 768px) {
+    nav {
+        padding: 15px 5%;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    nav a {
+        font-size: 14px;
+    }
+    .hero {
+        padding: 50px 6%;
+    }
+    .hero h1 {
+        font-size: 36px;
+    }
+    .doctor-info {
+        grid-template-columns: 1fr;
+    }
+    .appointment-info {
+        grid-template-columns: 1fr;
+    }
+    form {
+        padding: 25px;
+    }
+    .profile-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+}
+@media (max-width: 480px) {
+    nav {
+        min-height: auto;
+        padding: 15px;
+        gap: 10px;
+    }
+    nav a {
+        font-size: 13px;
+    }
+    h1 {
+        font-size: 27px;
+    }
+    h2 {
+        font-size: 22px;
+    }
+    .hero h1 {
+        font-size: 30px;
+    }
+    .hero p {
+        font-size: 15px;
+    }
+    .doctor-card {
+        padding: 20px;
+    }
+    form {
+        padding: 20px;
+    }
+    .auth-card {
+        padding: 25px 20px;
+    }
+}
+.logout-btn {
+    margin-left: auto;
+    background-color: #dc3545;
+    color: white !important;
+    padding: 10px 18px !important;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.logout-btn:hover {
+    background-color: #b02a37 !important;
+}

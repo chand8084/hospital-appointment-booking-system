@@ -1,0 +1,41 @@
+{% extends 'appointments/base.html' %}
+
+{% block title %}
+Edit Availability
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>Edit Availability</h1>
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label for="date">Date</label>
+            <input type="date" id="date" name="date" value="{{ availability.date|date:'Y-m-d' }}" required>
+
+            <br><br>
+
+            <label for="start_time">Start Time</label>
+            <input type="time" id="start_time" name="start_time" value="{{ availability.start_time|time:'H:i' }}" required>
+
+            <br><br>
+
+            <label for="end_time">End Time</label>
+            <input type="time" id="end_time" name="end_time" value="{{ availability.end_time|time:'H:i' }}" required>
+
+            <br><br>
+
+            <label>
+                <input type="checkbox" name="is_available" {% if availability.is_available %}checked{% endif %}>
+                Available
+            </label>
+
+            <br><br>
+
+            <button type="submit">Update Availability</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
